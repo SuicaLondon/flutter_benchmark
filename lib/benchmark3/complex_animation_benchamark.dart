@@ -44,10 +44,11 @@ class _ComplexAnimationBenchMarkState extends State<ComplexAnimationBenchMark> {
               children: List.generate(
                 1000,
                 (index) {
-                  double ratio = Random().nextDouble();
+                  double ratioX = Random().nextDouble();
+                  double ratioY = Random().nextDouble();
                   return RandomAnimationWidget(
-                    left: MediaQuery.of(context).size.width * ratio,
-                    top: MediaQuery.of(context).size.height * ratio,
+                    left: MediaQuery.of(context).size.width * ratioX,
+                    top: MediaQuery.of(context).size.height * ratioY,
                     type: AnimationType.byNumber(index),
                     child: Container(
                       width: 40,
