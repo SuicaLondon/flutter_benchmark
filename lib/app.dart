@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_benchmark/benchmark1/calculation_benchmark.dart';
 import 'package:flutter_benchmark/benchmark2/complex_ui_benchmark.dart';
+import 'package:flutter_benchmark/benchmark3/complex_animation_benchamark.dart';
 
 enum BenchmarkItem {
   calculation('Calculation benchmark', CalculationBenchmark()),
-  complexUI('Complex UI Render benchmark', ComplexUIBenchMark());
+  complexUI('Complex UI Render benchmark', ComplexUIBenchMark()),
+  complexAnimation(
+      'Complex Animation Render benchmark', ComplexAnimationBenchMark());
 
   const BenchmarkItem(this.name, this.page);
   final String name;
