@@ -1,8 +1,20 @@
-double fibonacci(double n) {
-  if (n == 0 || n == 1) {
-    return n;
+// double fibonacci(double n) {
+//   if (n == 0 || n == 1) {
+//     return n;
+//   }
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+double fibonacci(double number) {
+  double recur(double n, double a, double b) {
+    if (n > 0) {
+      return recur(n - 1, b, a + b);
+    } else {
+      return a;
+    }
   }
-  return fibonacci(n - 1) + fibonacci(n - 2);
+
+  return recur(number, 0, 1);
 }
 
 class TreeNode {

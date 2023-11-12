@@ -39,7 +39,7 @@ class _ComplexUIBenchMarkState extends State<ComplexUIBenchMark> {
             height: 350,
             child: Stack(
               children: List.generate(
-                10000,
+                1000,
                 (index) => Container(
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [

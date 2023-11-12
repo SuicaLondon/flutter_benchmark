@@ -9,7 +9,7 @@ class CalculationBenchmark extends StatefulWidget {
 }
 
 class _CalculationBenchmarkState extends State<CalculationBenchmark> {
-  final int calculateTimes = 10000;
+  final int calculateTimes = 100000;
   final ValueNotifier<double?> _calculationTime1 = ValueNotifier(null);
   final ValueNotifier<double?> _calculationTime2 = ValueNotifier(null);
   final ValueNotifier<double?> _calculationTime3 = ValueNotifier(null);
@@ -46,7 +46,7 @@ class _CalculationBenchmarkState extends State<CalculationBenchmark> {
   void _calculate(Function(int) callback, ValueNotifier<double?> targetValue) {
     DateTime startTime = DateTime.now();
     // Dart does not support tail recursion optimisation
-    callback(50);
+    callback(2000);
     DateTime endTime = DateTime.now();
     Duration duration = endTime.difference(startTime);
     targetValue.value = duration.inMicroseconds.toDouble();
@@ -114,7 +114,7 @@ class _CalculationBenchmarkState extends State<CalculationBenchmark> {
           ValueListenableBuilder(
               valueListenable: _calculationTime5,
               builder: (context, calculationTime5, child) {
-                return Text('Fib 50 times: $calculationTime5');
+                return Text('Fib 2000 times: $calculationTime5');
               }),
           ValueListenableBuilder(
               valueListenable: _calculationTime6,
